@@ -1,95 +1,61 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Heading, Highlight, Stack, Text } from "@chakra-ui/react";
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import { Card, Cards } from "@/components";
+import { visualizations, work } from "@/lib";
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+const Page = () => (
+  <Stack gap="12">
+    <Stack>
+      <Heading as="h1" fontWeight="black" size="4xl">
+        Emily Steed
+      </Heading>
+      <Text
+        as="span"
+        color="colorPalette.600"
+        fontSize="s"
+        _dark={{ color: "colorPalette.300" }}
+      >
+        Data Analyst
+      </Text>
+      <Text
+        color="colorPalette.900"
+        fontSize="2xl"
+        _dark={{ color: "colorPalette.200" }}
+      >
+        <Highlight
+          query={[
+            "data analysis and visualization",
+            "insights from complex datasets",
+            "positive impact",
+          ]}
+          styles={{ bg: "yellow.200", _dark: { bg: "pink.800" } }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
-}
+          Passionate about data analysis and visualization, drawing insights
+          from complex datasets, and making positive impact.
+        </Highlight>
+      </Text>
+    </Stack>
+    <Stack gap="4">
+      <Heading as="h2" fontWeight="bold" size="3xl">
+        Visualizations
+      </Heading>
+      <Cards>
+        {[visualizations.shiny, visualizations.tableau].map((visualization) => (
+          <Card key={visualization.title} {...visualization} />
+        ))}
+      </Cards>
+    </Stack>
+    <Stack gap="4">
+      <Heading as="h2" fontWeight="bold" size="3xl">
+        Work
+      </Heading>
+      <Cards>
+        {[work.dataAnalysis].map((work) => (
+          <Card key={work.title} {...work} />
+        ))}
+      </Cards>
+    </Stack>
+  </Stack>
+);
+
+export default Page;
