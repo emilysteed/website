@@ -17,7 +17,7 @@ export const createMetadata = ({
       {
         height: 630,
         url: `/api/og?description=${description || ""}&title=${title || ""}`,
-        width: 1230,
+        width: 1200,
       },
     ],
     locale: "en-US",
