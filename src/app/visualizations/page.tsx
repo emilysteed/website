@@ -1,7 +1,7 @@
 import { Heading, Stack } from "@chakra-ui/react";
 
 import { Card, Cards } from "@/components";
-import { visualizations } from "@/lib";
+import { createMetadata, visualizations } from "@/lib";
 
 const Page = () => (
   <Stack gap="4">
@@ -17,3 +17,8 @@ const Page = () => (
 );
 
 export default Page;
+
+export const metadata = createMetadata({
+  description: "Data analysis and visualization projects.",
+  title: "Visualizations",
+});

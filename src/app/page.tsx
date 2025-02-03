@@ -1,13 +1,14 @@
 import { Heading, Highlight, Stack, Text } from "@chakra-ui/react";
 
 import { Card, Cards } from "@/components";
-import { visualizations, work } from "@/lib";
+import { NAME } from "@/constants";
+import { createMetadata, visualizations, work } from "@/lib";
 
 const Page = () => (
   <Stack gap="12">
     <Stack>
       <Heading as="h1" fontWeight="black" size="4xl">
-        Emily Steed
+        {NAME}
       </Heading>
       <Text
         as="span"
@@ -23,12 +24,8 @@ const Page = () => (
         _dark={{ color: "colorPalette.200" }}
       >
         <Highlight
-          query={[
-            "data analysis and visualization",
-            "insights from complex datasets",
-            "positive impact",
-          ]}
-          styles={{ bg: "yellow.200", _dark: { bg: "pink.800" } }}
+          query={["analysis", "visualization", "positive impact"]}
+          styles={{ bg: "yellow.200", _dark: { bg: "orange.800" } }}
         >
           Passionate about data analysis and visualization, drawing insights
           from complex datasets, and making positive impact.
@@ -59,3 +56,8 @@ const Page = () => (
 );
 
 export default Page;
+
+export const metadata = createMetadata({
+  description: "Data Analyst",
+  title: NAME,
+});
