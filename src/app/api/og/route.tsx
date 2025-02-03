@@ -37,7 +37,7 @@ export const GET = async (request: Request) => {
               backgroundColor: "rgba(168,85,247,1)",
               borderRadius: "0.5rem",
               display: "flex",
-              padding: "0.25rem",
+              padding: "0.375rem",
             }}
           >
             <img
