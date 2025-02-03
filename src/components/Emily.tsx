@@ -1,12 +1,14 @@
-import type { AvatarProps } from "@/components/ui";
-import { Avatar } from "@/components/ui";
+import { NAME } from "@/constants";
+
+import type { AvatarProps } from "./ui";
+import { Avatar } from "./ui";
 
 export type EmilyProps = AvatarProps;
 
 export const Emily = ({ ...props }: EmilyProps) => (
   <Avatar
     colorPalette="purple"
-    name="Emily Steed"
+    name={NAME}
     outlineColor="colorPalette.500"
     outlineOffset="2"
     outlineStyle="solid"

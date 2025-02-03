@@ -1,7 +1,7 @@
 "use client";
 
-import { Flex, IconButton, Link, Text } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { chakra, Flex, IconButton, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaMoon, FaSun } from "react-icons/fa6";
 
@@ -29,47 +29,48 @@ export const Nav = () => {
       <Flex align="center" gap="4">
         <Flex
           align="center"
-          gap="2.5"
-          opacity={links.home.aProps.href === pathname ? 1 : 0.5}
-          _hover={{ opacity: 1 }}
+          gap={{ base: "1.5", sm: "2.5" }}
+          opacity={{
+            base: links.home.aProps.href === pathname ? 1 : 0.5,
+            _hover: 1,
+          }}
           asChild
         >
-          <Link asChild>
-            <NextLink {...links.home.aProps}>
-              <Emily size="xs" />
-              <Text
-                as="span"
-                display="none"
-                fontSize="xl"
-                fontWeight="bold"
-                md={{ display: "inline" }}
-              >
-                {links.home.text}
-              </Text>
-            </NextLink>
+          <Link {...links.home.aProps}>
+            <Emily size="xs" />
+            <Text
+              as="span"
+              display={{ base: "none", md: "inline" }}
+              fontSize="xl"
+              fontWeight="bold"
+            >
+              {links.home.text}
+            </Text>
           </Link>
         </Flex>
         {[links.viz, links.work].map((link) => (
-          <Link
+          <chakra.span
             key={link.text}
-            opacity={link.aProps.href === pathname ? 1 : 0.5}
-            _hover={{ opacity: 1 }}
+            opacity={{
+              base: link.aProps.href === pathname ? 1 : 0.5,
+              _hover: 1,
+            }}
             asChild
           >
-            <NextLink {...link.aProps}>
+            <Link {...link.aProps}>
               <Text as="span" fontSize="xl" fontWeight="bold">
                 {link.text}
               </Text>
-            </NextLink>
-          </Link>
+            </Link>
+          </chakra.span>
         ))}
       </Flex>
-      <Flex align="center" gap="2.5">
+      <Flex align="center" gap={{ base: "1.5", sm: "2.5" }}>
         {[links.gitHub, links.linkedIn].map((link) => (
           <IconButton key={link.text} asChild size="sm" variant="outline">
-            <NextLink {...link.aProps}>
+            <Link {...link.aProps}>
               <link.icon />
-            </NextLink>
+            </Link>
           </IconButton>
         ))}
         <IconButton onClick={toggleColorMode} size="sm" variant="outline">

@@ -10,7 +10,7 @@ const Layout = ({ children }: WithChildren) => (
         <Stack minH="100dvh" px="4" asChild>
           <Container maxW="3xl">
             <Nav />
-            <Box flexGrow="1" pt="16">
+            <Box flexGrow="1" pt={{ base: "12", md: "16" }}>
               {children}
             </Box>
             <Footer />

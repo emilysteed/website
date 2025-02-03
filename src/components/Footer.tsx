@@ -1,10 +1,11 @@
 "use client";
 
-import { Button, Flex, Icon, Link, Stack, Text } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Button, Flex, Icon, Stack, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 
+import { NAME } from "@/constants";
 import { links } from "@/lib";
 
 export const Footer = () => {
@@ -30,16 +31,14 @@ export const Footer = () => {
     <Stack as="footer" gap="2.5" py="16">
       <Flex align="center" justify="space-between">
         <Text as="span" fontSize="xl" fontWeight="bold">
-          Emily Steed
+          {NAME}
         </Text>
         <Flex align="center" gap="4">
           {[links.gitHub, links.linkedIn].map((link) => (
-            <Link key={link.text} asChild>
-              <NextLink {...link.aProps}>
-                <Text as="span" fontSize="m">
-                  {link.text}
-                </Text>
-              </NextLink>
+            <Link key={link.text} {...link.aProps}>
+              <Text as="span" fontSize="m">
+                {link.text}
+              </Text>
             </Link>
           ))}
         </Flex>

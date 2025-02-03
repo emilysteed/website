@@ -1,11 +1,11 @@
 import type { FlexProps } from "@chakra-ui/react";
 import { Flex, Heading, Stack, Text } from "@chakra-ui/react";
-import NextLink, { LinkProps as NextLinkProps } from "next/link";
+import Link, { LinkProps } from "next/link";
 
 import { Tag } from "./ui";
 
 export type CardProps = FlexProps & {
-  aProps: NextLinkProps;
+  aProps: LinkProps;
   description: string;
   tags?: readonly string[] | string[];
   title: string;
@@ -22,25 +22,26 @@ export const Card = ({
     <Flex
       gap="4"
       p="4"
-      bg="colorPalette.50"
+      bg={{ base: "colorPalette.50", _hover: "colorPalette.100" }}
       borderWidth="thin"
       borderStyle="solid"
       borderColor="colorPalette.500"
       borderRadius="md"
-      _hover={{ bg: "colorPalette.100" }}
       _dark={{
-        bg: "colorPalette.950",
-        borderColor: "colorPalette.700",
-        _hover: {
-          bg: "colorPalette.900",
+        bg: {
+          base: "colorPalette.950",
+          _hover: "colorPalette.900",
         },
+        borderColor: "colorPalette.700",
       }}
       cursor="pointer"
       asChild
       colorPalette="purple"
+      focusRingColor="blue.200 !important"
+      focusVisibleRing="outside"
       {...props}
     >
-      <NextLink {...aProps}>
+      <Link {...aProps}>
         <Stack gap="0.5">
           <Heading as="h3" fontWeight="bold" size="xl">
             {title}
@@ -61,7 +62,7 @@ export const Card = ({
             </Flex>
           )}
         </Stack>
-      </NextLink>
+      </Link>
     </Flex>
   );
 };

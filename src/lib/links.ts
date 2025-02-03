@@ -2,6 +2,8 @@ import { AnchorHTMLAttributes } from "react";
 import type { IconType } from "react-icons";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
+import { NAME } from "@/constants";
+
 export const links = {
   gitHub: {
     aProps: {
@@ -15,7 +17,7 @@ export const links = {
     aProps: {
       href: "/",
     },
-    text: "Emily Steed",
+    text: NAME,
   },
   linkedIn: {
     aProps: {
