@@ -86,6 +86,8 @@ export const GET = async (request: Request) => {
           style: "normal",
         },
       ],
+      height: 630,
+      width: 1200
     },
   );
 };
