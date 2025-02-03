@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-import { NAME } from "@/constants";
+import { NAME, URL as URL_CONSTANT } from "@/constants";
 import { loadFont } from "@/lib";
 
 export const runtime = "edge";
@@ -42,7 +42,7 @@ export const GET = async (request: Request) => {
           >
             <img
               alt={NAME}
-              src="http://localhost:3000/emily.png"
+              src={`${URL_CONSTANT}/emily.png`}
               style={{ height: "8rem", width: "8rem" }}
             />
           </div>
@@ -87,7 +87,7 @@ export const GET = async (request: Request) => {
         },
       ],
       height: 630,
-      width: 1200
+      width: 1200,
     },
   );
 };
