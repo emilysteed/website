@@ -1,4 +1,5 @@
 import { Box, Container, Stack } from "@chakra-ui/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Footer, Nav, Provider } from "@/components";
 import { WithChildren } from "@/types";
@@ -12,6 +13,7 @@ const Layout = ({ children }: WithChildren) => (
             <Nav />
             <Box flexGrow="1" pt={{ base: "12", md: "16" }}>
               {children}
+              <Analytics />
             </Box>
             <Footer />
           </Container>
