@@ -1,1 +1,1 @@
-export const NAME = "Emily Steed" as const;
+export const NAME = "Emily Steed";
