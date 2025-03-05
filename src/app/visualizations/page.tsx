@@ -9,7 +9,11 @@ const Page = () => (
       Visualizations
     </Heading>
     <Cards>
-      {[visualizations.shiny, visualizations.tableau].map((visualization) => (
+      {[
+        visualizations.usAidContracts,
+        visualizations.shiny,
+        visualizations.tableau,
+      ].map((visualization) => (
         <Card key={visualization.title} {...visualization} />
       ))}
     </Cards>

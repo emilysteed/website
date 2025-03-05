@@ -3,6 +3,15 @@ import { AnchorHTMLAttributes } from "react";
 import { CardProps } from "../components";
 
 export const visualizations = {
+  usAidContracts: {
+    aProps: {
+      href: "https://usa-spending-sr8r.onrender.com",
+      target: "_blank",
+    },
+    description: "Data visualization for USAID contracts",
+    tags: ["Dash", "Python"],
+    title: "USAID Contracts App",
+  },
   shiny: {
     aProps: {
       href: "https://emilysteed.shinyapps.io/shiny",
