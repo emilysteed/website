@@ -9,7 +9,7 @@ const Page = () => (
       Work
     </Heading>
     <Cards>
-      {[work.dataAnalysis].map((work) => (
+      {[work.usAidContracts, work.dataAnalysis].map((work) => (
         <Card key={work.title} {...work} />
       ))}
     </Cards>

@@ -37,7 +37,11 @@ const Page = () => (
         Visualizations
       </Heading>
       <Cards>
-        {[visualizations.shiny, visualizations.tableau].map((visualization) => (
+        {[
+          visualizations.usAidContracts,
+          visualizations.shiny,
+          visualizations.tableau,
+        ].map((visualization) => (
           <Card key={visualization.title} {...visualization} />
         ))}
       </Cards>
@@ -47,7 +51,7 @@ const Page = () => (
         Work
       </Heading>
       <Cards>
-        {[work.dataAnalysis].map((work) => (
+        {[work.usAidContracts, work.dataAnalysis].map((work) => (
           <Card key={work.title} {...work} />
         ))}
       </Cards>
